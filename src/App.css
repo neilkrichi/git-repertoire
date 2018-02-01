@@ -8,7 +8,6 @@ body {
   text-align: center;
 }
 
-
 .App-header {
   background-color: #222;
   padding: 20px;
@@ -23,7 +22,12 @@ body {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.user-info {
+  height: 700px;
+}
+
+.footer {
+  background-color: #222;
+  color: white;
+  padding: 10px 0px;
 }
