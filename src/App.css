@@ -5,12 +5,11 @@ body {
 }
 
 .App {
-  text-align: center;
 }
 
 .App-header {
   background-color: #222;
-  padding: 20px;
+  padding: 20px 50px;
   color: white;
 }
 
@@ -30,4 +29,22 @@ body {
   background-color: #222;
   color: white;
   padding: 10px 0px;
+}
+
+.avatar .thumbnail {
+  width: 70px;
+  height: auto;
+}
+
+.user-container {
+  padding: 20px 50px;
+  text-align: center;
+}
+
+.user-info p {
+  margin: 2px;
+}
+
+.user-info h2 {
+  margin: 5px;
 }
