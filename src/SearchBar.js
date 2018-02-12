@@ -12,16 +12,22 @@ export default class SearchBar extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  getUser(username) {
+    fetch(`https://api.github.com/users/${username}`)
+    .then(response => response.json())
+    .then(response => {
+      console.log(response)
+      return response
+    })
+  }
+
   handleChange(e) {
     this.setState({username: e.target.value});
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state.username !== '') {
-      alert('A username was submitted: ' + this.state.username);
-      this.setState({username:''})
-    }
+    this.getUser(this.state.username)
   }
 
   render() {
