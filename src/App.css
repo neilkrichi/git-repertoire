@@ -43,6 +43,10 @@ body {
   height: 100px;
 }
 
+.footer .link {
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 .App-body {
   padding: 50px 60px;
