@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import Avatar from './Avatar'
 import './App.css';
 
 export default class User extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
+
   render(){
     return(
       <div className='user-container'>
-        <Avatar />
         <div className='user-info'>
-          <h2>Neil Krichi</h2>
-          <p>9 repositories</p>
-          <p>3 following</p>
-          <p>0 followers</p>
+          <img className='thumbnail' src={this.props.user.avatar_url} className='thumbnail' />
+          <h2>{this.props.user.login}</h2>
         </div>
       </div>
 

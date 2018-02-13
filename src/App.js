@@ -1,17 +1,70 @@
 import React, { Component } from 'react';
-import Header from './Header'
 import Footer from './Footer'
-import Avatar from './Avatar'
-import User from './User'
+import UserList from './UserList'
+import UserDetails from './UserDetails'
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      username: '',
+      userData: []
+    }
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  getUser(username) {
+    fetch(`https://api.github.com/search/users?q=${username}`)
+    .then(response => response.json())
+    .then(response => {
+      this.setState({userData: response.items});
+      console.log(this.state.userData)
+      if (response.message === 'Not Found') {
+        let error = 'There was an error'
+        console.log(error)
+      }
+      return response
+    })
+    .catch((error) => {
+    })
+  }
+
+  handleChange(e) {
+    this.setState({username: e.target.value});
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.getUser(this.state.username)
+  }
+
   render() {
     return (
       <div className="App">
-        <Header />
-        <User />
-        <User />
+
+        <div className="App-header">
+          <h1 className="App-title">Github User Search</h1>
+          <p>Powererd by the <a>GitHub API</a></p>
+            <div>
+              <form onSubmit={this.handleSubmit}>
+                <input type='text' name='username' value={this.state.username} placeholder='search for a user' onChange={this.handleChange} />
+                <input type='submit' value='Submit' />
+              </form>
+            </div>
+        </div>
+
+        <div className='App-body'>
+          {this.state.userData.map((user)=>{
+                  return(
+                      <UserList
+                        user={user}
+                        />
+                  )
+                })}
+        </div>
         <Footer/>
       </div>
     );

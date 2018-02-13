@@ -43,20 +43,26 @@ body {
   height: 100px;
 }
 
-.avatar .thumbnail {
-  width: 70px;
-  height: auto;
+
+.App-body {
+  padding: 50px 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .user-container {
-  padding: 20px 50px;
-  text-align: center;
-}
-
-.user-info p {
-  margin: 2px;
+  width: 200px;
+  height: 200px;
+  margin: auto;
 }
 
 .user-info h2 {
   margin: 5px;
+}
+
+.user-info .thumbnail {
+  width: 100px;
+  height: auto;
 }
