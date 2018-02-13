@@ -7,7 +7,7 @@ export default class Footer extends Component {
     return(
         <div className='footer'>
           <p>Made in Van city w luv</p>
-          <p>View source code on <Link to='/git' target="_blank">Github</Link></p>
+          <p>View source code on <a src='www.github.com' target="_blank">Github</a></p>
         </div>
     )
   }

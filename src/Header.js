@@ -13,10 +13,13 @@ export default class Header extends Component {
   }
 
   getUser(username) {
-    fetch(`https://api.github.com/users/${username}`)
+    fetch(`https://api.github.com/search/users?q=${username}`)
     .then(response => response.json())
     .then(response => {
       console.log(response)
+      if (response.message === 'Not Found') {
+        console.log('There was en error')
+      }
       return response
     })
   }
