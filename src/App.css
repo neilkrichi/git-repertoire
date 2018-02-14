@@ -48,7 +48,14 @@ body {
   text-decoration: underline;
 }
 
-.App-body {
+.user-page {
+  padding-top: 30px;
+}
+.user-page h3 {
+  text-align: center;
+}
+
+.user-list {
   padding: 50px 60px;
   display: flex;
   flex-direction: row;
