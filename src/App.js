@@ -4,7 +4,21 @@ import UserList from './UserList'
 import UserDetails from './UserDetails'
 import './App.css';
 
+import {connect} from 'react-redux';
+import {fetchUsers} from './actions/userActions';
+
+
+@connect((store) => {
+  return {
+    users: store.users.users
+  }
+})
+
 class App extends Component {
+  componentWillMount(){
+    this.props.dispatch(fetchUsers());
+  }
+
   constructor(props){
     super(props);
     this.state = {
@@ -23,10 +37,10 @@ class App extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.getUser(this.state.username)
+    // this.getUser(this.state.username)
   }
 
-  getUser(username) {
+  /* getUser(username) {
     fetch(`https://api.github.com/search/users?q=${username}`)
     .then(response => response.json())
     .then(response => {
@@ -41,7 +55,7 @@ class App extends Component {
     })
     .catch((error) => {
     })
-  }
+  } */
 
   renderUsers() {
     if (this.state.userData.length === 0) {
@@ -82,7 +96,7 @@ class App extends Component {
         </div>
 
         <div className='App-body'>
-          {this.renderUsers()}
+          { /* this.renderUsers() */ }
         </div>
         <Footer/>
       </div>
@@ -91,6 +105,8 @@ class App extends Component {
 }
 
 export default App;
+
+
 /*
 const API = 'https://api.github.com/users';
 
