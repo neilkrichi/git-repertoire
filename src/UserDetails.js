@@ -10,8 +10,8 @@ export default class User extends Component {
 
   render(){
     return(
-      <div className=''>
-        <div className=''>
+      <div className='user-details'>
+        <div className='user-profile'>
           <h2>{this.props.user.name}</h2>
           <p>{this.props.public_repos} public repositories</p>
           <p>{this.props.following} following</p>
