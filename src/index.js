@@ -14,7 +14,8 @@ class App extends Component {
     this.state = {
       username: '',
       userData: [],
-      count: 0
+      count: 0,
+      selectedUser: null,
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -46,7 +47,7 @@ class App extends Component {
     })
   }
 
-  renderUsers() {
+  renderUserList() {
     if (this.state.userData.length === 0) {
       return ''
     }
@@ -85,7 +86,7 @@ class App extends Component {
         </div>
 
         <div className='App-body'>
-           {this.renderUsers()}
+           {this.renderUserList()}
         </div>
         <Footer/>
       </div>
