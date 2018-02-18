@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 import registerServiceWorker from './registerServiceWorker';
 
 import Footer from './components/Footer'
@@ -30,10 +31,9 @@ class App extends Component {
   }
 
    getUser(username) {
-    fetch(`https://api.github.com/search/users?q=${username}`)
-    .then(response => response.json())
+    axios.get(`https://api.github.com/search/users?q=${username}`)
     .then(response => {
-      this.setState({userData: response.items, count: response.total_count});
+      this.setState({userData: response.data.items, count: response.data.total_count});
       //console.log(response)
       //console.log(this.state.userData)
       if (response.message === 'Not Found') {
