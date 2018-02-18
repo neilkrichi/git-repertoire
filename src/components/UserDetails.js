@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../styles/style.css';
 
 export default class User extends Component {
   constructor(props) {
