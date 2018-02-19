@@ -55,16 +55,7 @@ class App extends Component {
       return(
         <div className='user-page'>
           <h3 className=''>Found {this.state.count} results for {this.state.username}</h3>
-          <div className='user-list'>
-            {this.state.userData.map((user, key)=>{
-              return(
-                <UserList
-                  user={user}
-                  key={key}
-                  />
-              )
-            })}
-          </div>
+          <UserList userData={this.state.userData}/>
         </div>
       )
     }

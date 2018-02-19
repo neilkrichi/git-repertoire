@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import UserListItem from './UserListItem';
 import '../styles/style.css';
 
 export default class User extends Component {
@@ -10,11 +11,15 @@ export default class User extends Component {
 
   render(){
     return(
-      <div className='user-container'>
-        <div className='user-info'>
-          <img className='thumbnail' src={this.props.user.avatar_url} className='thumbnail' />
-          <h2 onClick={()=>{}}>{this.props.user.login}</h2>
-        </div>
+      <div className='user-list'>
+        {this.props.userData.map((user, key)=>{
+          return(
+            <UserListItem
+              user={user}
+              key={key}
+              />
+          )
+        })}
       </div>
     )
   }
