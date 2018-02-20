@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import registerServiceWorker from './registerServiceWorker';
 
+import Header from './components/Header'
 import Footer from './components/Footer'
 import UserList from './components/UserList'
 import UserDetails from './components/UserDetails'
@@ -17,7 +18,6 @@ class App extends Component {
       count: 0,
       selectedUser: null,
     }
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -31,7 +31,7 @@ class App extends Component {
     this.getUser(this.state.username)
   }
 
-   getUser(username) {
+  getUser(username) {
     axios.get(`https://api.github.com/search/users?q=${username}`)
     .then(response => {
       this.setState({userData: response.data.items, count: response.data.total_count});
@@ -55,6 +55,7 @@ class App extends Component {
       return(
         <div className='user-page'>
           <h3 className=''>Found {this.state.count} results for {this.state.username}</h3>
+
           <UserList userData={this.state.userData}/>
         </div>
       )
@@ -64,20 +65,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
-        <div className="App-header">
-          <h1 className="App-title">Github User Search</h1>
-          <p>Powererd by the <a>GitHub API</a></p>
-          <div>
-            <form onSubmit={this.handleSubmit}>
-              <input type='text' name='username' value={this.state.username} placeholder='enter a username' onChange={this.handleChange} />
-              <input type='submit' value='Submit' />
-            </form>
-          </div>
-        </div>
-
+        <Header username={this.state.username} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
         <div className='App-body'>
-           {this.renderUserList()}
+          {this.renderUserList()}
         </div>
         <Footer/>
       </div>
