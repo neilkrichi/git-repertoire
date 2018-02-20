@@ -47,27 +47,12 @@ class App extends Component {
     })
   }
 
-  renderUserList() {
-    if (this.state.userData.length === 0) {
-      return ''
-    }
-    else {
-      return(
-        <div className='user-page'>
-          <h3 className=''>Found {this.state.count} results for {this.state.username}</h3>
-
-          <UserList userData={this.state.userData}/>
-        </div>
-      )
-    }
-  }
-
   render() {
     return (
       <div className="App">
         <Header username={this.state.username} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
         <div className='App-body'>
-          {this.renderUserList()}
+        <UserList userData={this.state.userData} count={this.state.count} username={this.state.username} />
         </div>
         <Footer/>
       </div>

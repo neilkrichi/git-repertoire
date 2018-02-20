@@ -9,18 +9,26 @@ export default class User extends Component {
     };
   }
 
-  render(){
-    return(
-      <div className='user-list'>
-        {this.props.userData.map((user, key)=>{
-          return(
-            <UserListItem
-              user={user}
-              key={key}
-              />
-          )
-        })}
-      </div>
-    )
-  }
+  render() {
+      if (this.props.userData.length === 0) {
+        return ''
+      }
+      else {
+        return(
+          <div className='user-page'>
+            <h3 className=''>Found {this.props.count} results for {this.props.username}</h3>
+              <div className='user-list'>
+                {this.props.userData.map((user, key)=>{
+                  return(
+                    <UserListItem
+                      user={user}
+                      key={key}
+                      />
+                  )
+                })}
+              </div>
+          </div>
+        )
+      }
+    }
 }
