@@ -1,8 +1,5 @@
-export default function() {
-  return [
-    {username: 'neilb'},
-    {username: 'neilkrichi'},
-    {username: 'spladug'},
-    {username: 'neilang'}
-  ]
+export default function(state = null, action) {
+  console.log('Action received', action);
+  
+  return state;
 }

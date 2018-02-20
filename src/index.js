@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import ReduxPromise from 'redux-promise';
+
 import registerServiceWorker from './registerServiceWorker';
 
 import Header from './components/Header'
 import Footer from './components/Footer'
 import UserList from './containers/UserList'
 import UserDetails from './containers/UserDetails'
+import reducers from './reducers'
+
 import './styles/style.css';
 
 class App extends Component {
@@ -19,21 +24,9 @@ class App extends Component {
       selectedUser: 'neilkrichi',
       userDetails: []
     }
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(e) {
-    this.setState({username: e.target.value});
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    this.getUser(this.state.username);
-    this.getUserDetails(this.state.selectedUser);
-  }
-
-  getUser(username) {
+/*  getUser(username) {
     axios.get(`https://api.github.com/search/users?q=${username}`)
     .then(response => {
       this.setState({userData: response.data.items, count: response.data.total_count});
@@ -47,20 +40,20 @@ class App extends Component {
     })
     .catch((error) => {
     })
-  }
+  } */
 
-  getUserDetails(user) {
+/*  getUserDetails(user) {
     axios.get(`https://api.github.com/users/${user}`)
     .then(response => {
       console.log(response)
       this.setState({userDetails: response.data})
     })
-  }
+  } */
 
   render() {
     return (
       <div className="App">
-        <Header username={this.state.username} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+        <Header />
         <div className='App-body'>
         <UserDetails userDetails={this.state.userDetails} />
         <UserList
@@ -75,5 +68,10 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const createStorewithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+
+ReactDOM.render(
+  <Provider store={createStorewithMiddleware(reducers)}>
+    <App />
+  </Provider>, document.getElementById('root'));
 registerServiceWorker();
