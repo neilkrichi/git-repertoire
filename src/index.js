@@ -16,7 +16,8 @@ class App extends Component {
       username: '',
       userData: [],
       count: 0,
-      selectedUser: null,
+      selectedUser: 'neilkrichi',
+      userDetails: []
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,14 +29,15 @@ class App extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.getUser(this.state.username)
+    this.getUser(this.state.username);
+    this.getUserDetails(this.state.selectedUser);
   }
 
   getUser(username) {
     axios.get(`https://api.github.com/search/users?q=${username}`)
     .then(response => {
       this.setState({userData: response.data.items, count: response.data.total_count});
-      //console.log(response)
+      console.log(response)
       //console.log(this.state.userData)
       if (response.message === 'Not Found') {
         let error = 'There was an error'
@@ -47,12 +49,25 @@ class App extends Component {
     })
   }
 
+  getUserDetails(user) {
+    axios.get(`https://api.github.com/users/${user}`)
+    .then(response => {
+      console.log(response)
+      this.setState({userDetails: response.data})
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <Header username={this.state.username} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
         <div className='App-body'>
-        <UserList userData={this.state.userData} count={this.state.count} username={this.state.username} />
+        <UserDetails userDetails={this.state.userDetails} />
+        <UserList
+          userData={this.state.userData}
+          count={this.state.count}
+          username={this.state.username}
+           />
         </div>
         <Footer/>
       </div>

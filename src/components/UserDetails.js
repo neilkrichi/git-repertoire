@@ -9,16 +9,23 @@ export default class User extends Component {
   }
 
   render(){
-    return(
-      <div className='user-details'>
-        <div className='user-profile'>
-          <h2>{this.props.user.name}</h2>
-          <p>{this.props.public_repos} public repositories</p>
-          <p>{this.props.following} following</p>
-          <p>{this.props.followers} followers</p>
-        </div>
-      </div>
+    const user = this.props.userDetails;
 
-    )
+    if (user.length === 0) {
+      return ''
+    }
+    else {
+      return(
+        <div className='user-details'>
+          <div className='user-profile'>
+            <img className='thumbnail' src={user.avatar_url} className='thumbnail' />
+            <h2>{user.login}</h2>
+            <p>{user.public_repos} public repositories</p>
+            <p>{user.following} following</p>
+            <p>{user.followers} followers</p>
+          </div>
+        </div>
+      )
+    }
   }
 }

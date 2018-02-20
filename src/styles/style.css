@@ -77,3 +77,19 @@ body {
   width: 100px;
   height: auto;
 }
+
+.user-details {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.user-profile {
+  border: 1px solid black;
+  margin: 0px 250px;
+  padding-top: 30px;
+}
+
+.user-profile .thumbnail {
+  width: 150px;
+  height: auto;
+}
