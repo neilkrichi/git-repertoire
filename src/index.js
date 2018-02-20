@@ -5,8 +5,8 @@ import registerServiceWorker from './registerServiceWorker';
 
 import Header from './components/Header'
 import Footer from './components/Footer'
-import UserList from './components/UserList'
-import UserDetails from './components/UserDetails'
+import UserList from './containers/UserList'
+import UserDetails from './containers/UserDetails'
 import './styles/style.css';
 
 class App extends Component {
