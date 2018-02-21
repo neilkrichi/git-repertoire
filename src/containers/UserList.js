@@ -11,8 +11,9 @@ class UserList extends Component {
     };
   }
 
+
   render() {
-    var counter = ''
+/*    var counter = ''
     if (this.props.count <= 30) {
       counter = `${this.props.count}/${this.props.count}`
     }
@@ -23,31 +24,32 @@ class UserList extends Component {
       if (this.props.userData.length === 0) {
         return ''
       }
-      else {
+      else { */
         return(
           <div className='user-page'>
-            <h3 className=''>Displaying {counter} results for {this.props.username}</h3>
+            <h3 className=''>Displaying 0 results</h3>
               <div className='user-list'>
-                {this.props.userData.map((user, key)=>{
-                  return(
-                    <UserListItem
-                      user={user}
-                      key={key}
-                      />
-                  )
+                {this.props.users.map((users)=>{
+                  users.items.map((user, key) => {
+                    console.log(user)
+                    return(
+                      <UserListItem
+                        user={user}
+                        key={key}
+                        />
+                    )
+                  } )
+
                 })}
               </div>
           </div>
         )
       }
-    }
 }
 
-function mapStateToProps(state){
+function mapStateToProps({ users }){
   // Whatever is returned will show up as props inside of UserList
-  return {
-    users: state.users
-  };
+  return { users };
 }
 
 export default connect(mapStateToProps)(UserList);

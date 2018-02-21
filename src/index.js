@@ -6,7 +6,7 @@ import ReduxPromise from 'redux-promise';
 
 import registerServiceWorker from './registerServiceWorker';
 
-import Header from './components/Header'
+import Header from './containers/Header'
 import Footer from './components/Footer'
 import UserList from './containers/UserList'
 import UserDetails from './containers/UserDetails'
@@ -56,11 +56,7 @@ class App extends Component {
         <Header />
         <div className='App-body'>
         <UserDetails userDetails={this.state.userDetails} />
-        <UserList
-          userData={this.state.userData}
-          count={this.state.count}
-          username={this.state.username}
-           />
+        <UserList />
         </div>
         <Footer/>
       </div>

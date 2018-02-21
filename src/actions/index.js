@@ -7,9 +7,7 @@ export const FETCH_USERS = 'FETCH_USERS';
 export function fetchUsers(username) {
   const url = `${ROOT_URL}${username}`;
   const request = axios.get(url);
-
-  console.log('Request:', request)
-
+  
   return {
     type: FETCH_USERS,
     payload: request
