@@ -26,30 +26,6 @@ class App extends Component {
     }
   }
 
-/*  getUser(username) {
-    axios.get(`https://api.github.com/search/users?q=${username}`)
-    .then(response => {
-      this.setState({userData: response.data.items, count: response.data.total_count});
-      console.log(response)
-      //console.log(this.state.userData)
-      if (response.message === 'Not Found') {
-        let error = 'There was an error'
-        console.log(error)
-      }
-      return response
-    })
-    .catch((error) => {
-    })
-  } */
-
-/*  getUserDetails(user) {
-    axios.get(`https://api.github.com/users/${user}`)
-    .then(response => {
-      console.log(response)
-      this.setState({userDetails: response.data})
-    })
-  } */
-
   render() {
     return (
       <div className="App">
