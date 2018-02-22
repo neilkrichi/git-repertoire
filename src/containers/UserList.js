@@ -31,7 +31,7 @@ class UserList extends Component {
               <div className='user-list'>
                 {this.props.users.map((users)=>{
                   users.items.map((user, key) => {
-                    console.log(user)
+                    // console.log(user)
                     return(
                       <UserListItem
                         user={user}
