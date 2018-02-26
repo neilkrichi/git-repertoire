@@ -17,47 +17,41 @@ class UserList extends Component {
       let userData = this.props.users[0].items
       console.log(count, userData)
 
-      userData.map((user,key) => {
+      return userData.map((user,key) => {
         return(
-          <div>
-            <h2>{count}</h2>
-            <h3>{user.login}</h3>
+          <div className='user-page'>
+            <div className='user-list'>
               <UserListItem
               user={user}
               key={key}
               />
+            </div>
           </div>
         )
           })
         }
       }
 
+renderCounter(){
+  if (this.props.users.length > 0) {
+    var count = this.props.users[0].total_count
+    var counter = ''
+    if (count <= 30) {
+    counter = `${count}/${count}`
+    }
+    else {
+    counter = `30/${count}`
+    }
+    return (<h3 className=''>Displaying {counter} results</h3>)
+  }
+}
+
   render() {
-    /*    var counter = ''
-    if (this.props.count <= 30) {
-    counter = `${this.props.count}/${this.props.count}`
-    }
-    else {
-    counter = `30/${this.props.count}`
-    }
-
-    if (this.props.userData.length === 0) {
-    return ''
-    }
-    else {
-
-    this.props.users[0].items.map((user, key) => {
-    return(
-
-    )
-    })}; */
         return(
           <div className='user-page'>
-            <h3 className=''>Displaying 0 results</h3>
-            <div className=''>
-              <ul>
+            {this.renderCounter()}
+            <div className='user-list'>
                 {this.renderUserList()}
-              </ul>
             </div>
           </div>
         )
