@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import '../styles/style.css';
 
-export default class User extends Component {
+class UserDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,3 +31,10 @@ export default class User extends Component {
     }
   }
 }
+
+function mapStateToProps({ userdetails }){
+  // Whatever is returned will show up as props inside of UserList
+  return { userdetails };
+}
+
+export default connect(mapStateToProps)(UserDetails);
