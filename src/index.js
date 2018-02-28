@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import ReduxPromise from 'redux-promise';
 
 import registerServiceWorker from './registerServiceWorker';
@@ -40,7 +40,9 @@ class App extends Component {
   }
 }
 
-const createStorewithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+const createStorewithMiddleware = compose(
+  applyMiddleware(ReduxPromise),
+  window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)
 
 ReactDOM.render(
   <Provider store={createStorewithMiddleware(reducers)}>
