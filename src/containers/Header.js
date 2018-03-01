@@ -23,7 +23,8 @@ class Header extends Component {
 
     handleSubmit(e) {
       e.preventDefault();
-      this.props.fetchUsers(this.state.username)
+      this.props.fetchUsers(this.state.username);
+      this.props.fetchUserDetails(this.state.username);
       //this.getUser(this.state.username);
       //this.getUserDetails(this.state.selectedUser);
 

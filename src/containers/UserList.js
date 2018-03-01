@@ -17,16 +17,12 @@ class UserList extends Component {
       let userData = this.props.users[0].items
       console.log(count, userData)
 
-      return userData.map((user,key) => {
+      return userData.map((user, key) => {
         return(
-          <div className='user-page'>
-            <div className='user-list'>
               <UserListItem
               user={user}
               key={key}
               />
-            </div>
-          </div>
         )
           })
         }
