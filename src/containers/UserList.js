@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import UserListItem from '../components/UserListItem';
+import UserListItem from './UserListItem';
 import '../styles/style.css';
 
 class UserList extends Component {

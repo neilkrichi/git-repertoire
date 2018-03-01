@@ -10,25 +10,36 @@ class UserDetails extends Component {
     };
   }
 
-  render(){
-    const user = this.props.userDetails;
+  renderUserDetails(){
+    const userDetails = this.props.userdetails[0];
 
-    if (user.length === 0) {
-      return ''
-    }
-    else {
+    if (this.props.userdetails.length > 0 ) {
+      console.log(userDetails.login)
       return(
         <div className='user-details'>
           <div className='user-profile'>
-            <img className='thumbnail' src={user.avatar_url} className='thumbnail' />
-            <h2>{user.login}</h2>
-            <p>{user.public_repos} public repositories</p>
-            <p>{user.following} following</p>
-            <p>{user.followers} followers</p>
+            <img className='thumbnail' src={userDetails.avatar_url} className='thumbnail' />
+            <h2>{userDetails.login}</h2>
+            <p>{userDetails.public_repos} public repositories</p>
+            <p>{userDetails.following} following</p>
+            <p>{userDetails.followers} followers</p>
           </div>
         </div>
       )
     }
+    else {
+      return (
+        <div className='user-details'>
+          <h3>User details</h3>
+        </div>
+      )
+    }
+  }
+
+  render(){
+    return (
+      this.renderUserDetails()
+    )
   }
 }
 
