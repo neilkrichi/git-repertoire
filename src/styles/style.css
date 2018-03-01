@@ -87,3 +87,7 @@ body {
   width: 150px;
   height: auto;
 }
+
+.centered-text {
+  text-align: center;
+}
