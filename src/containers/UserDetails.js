@@ -28,11 +28,7 @@ class UserDetails extends Component {
       )
     }
     else {
-      return (
-        <div className='user-details'>
-          <h3>User details</h3>
-        </div>
-      )
+      return '';
     }
   }
 
