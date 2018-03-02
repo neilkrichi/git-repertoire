@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchUsers, fetchUserDetails } from '../actions/index';
+import { fetchUsers } from '../actions/index';
 
 import '../styles/style.css';
 
@@ -24,7 +24,7 @@ class Header extends Component {
     handleSubmit(e) {
       e.preventDefault();
       this.props.fetchUsers(this.state.username);
-      this.props.fetchUserDetails(this.state.username);
+      //this.props.fetchUserDetails(this.state.username);
       //this.getUser(this.state.username);
       //this.getUserDetails(this.state.selectedUser);
 
@@ -47,7 +47,7 @@ class Header extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchUsers: fetchUsers, fetchUserDetails: fetchUserDetails }, dispatch);
+  return bindActionCreators({ fetchUsers: fetchUsers }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(Header)
