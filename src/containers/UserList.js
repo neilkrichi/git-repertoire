@@ -13,9 +13,7 @@ class UserList extends Component {
 
   renderUserList() {
     if (this.props.users.length > 0) {
-      let count = this.props.users[0].total_count
       let userData = this.props.users[0].items
-      console.log(count, userData)
 
       return userData.map((user, key) => {
         return(

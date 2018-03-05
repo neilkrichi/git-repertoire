@@ -91,3 +91,7 @@ body {
 .centered-text {
   text-align: center;
 }
+
+.user-details .username {
+  cursor: pointer;
+}

@@ -12,14 +12,14 @@ class UserDetails extends Component {
 
   renderUserDetails(){
     const userDetails = this.props.userdetails[0];
+    const profileUrl = 'https://github.com/'
 
     if (this.props.userdetails.length > 0 ) {
-      console.log(userDetails.login)
       return(
         <div className='user-details'>
           <div className='user-profile'>
-            <img className='thumbnail' src={userDetails.avatar_url} className='thumbnail' />
-            <h2>{userDetails.login}</h2>
+            <img alt='' className='thumbnail' src={userDetails.avatar_url} className='thumbnail' />
+            <h2 className='username' onClick={()=>window.open(`${profileUrl}${userDetails.login}`, '_blank')}>{userDetails.login}</h2>
             <p>{userDetails.public_repos} public repositories</p>
             <p>{userDetails.following} following</p>
             <p>{userDetails.followers} followers</p>
