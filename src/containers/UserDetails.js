@@ -23,8 +23,9 @@ class UserDetails extends Component {
             <p>{userDetails.public_repos} public repositories</p>
             <p>{userDetails.following} following</p>
             <p>{userDetails.followers} followers</p>
+            <p onClick={()=>window.open(`${profileUrl}${userDetails.login}`, '_blank')}>View {userDetails.login}'s full profile</p>
           </div>
-          <p onClick={()=>window.open(`${profileUrl}${userDetails.login}`, '_blank')}>View {userDetails.login}'s full profile</p>
+
         </div>
       )
     }

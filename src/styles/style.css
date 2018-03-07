@@ -81,6 +81,7 @@ body {
   border: 1px solid black;
   margin: 0px 250px;
   padding-top: 30px;
+  background-color: #d9d9d9;
 }
 
 .user-profile .thumbnail {
