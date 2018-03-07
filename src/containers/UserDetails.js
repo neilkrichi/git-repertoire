@@ -19,11 +19,12 @@ class UserDetails extends Component {
         <div className='user-details'>
           <div className='user-profile'>
             <img alt='' className='thumbnail' src={userDetails.avatar_url} className='thumbnail' />
-            <h2 className='username' onClick={()=>window.open(`${profileUrl}${userDetails.login}`, '_blank')}>{userDetails.login}</h2>
+            <h2 className='username'>{userDetails.login}</h2>
             <p>{userDetails.public_repos} public repositories</p>
             <p>{userDetails.following} following</p>
             <p>{userDetails.followers} followers</p>
           </div>
+          <p onClick={()=>window.open(`${profileUrl}${userDetails.login}`, '_blank')}>View {userDetails.login}'s full profile</p>
         </div>
       )
     }
