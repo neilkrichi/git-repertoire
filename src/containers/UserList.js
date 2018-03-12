@@ -36,7 +36,7 @@ renderCounter(){
     else {
     counter = `30/${count}`
     }
-    return (<h3 className='centered-text'>Displaying {counter} results</h3>)
+    return (<h2 className='centered-text'>Displaying {counter} results</h2>)
   }
 }
 

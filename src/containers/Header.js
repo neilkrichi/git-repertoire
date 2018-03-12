@@ -37,8 +37,8 @@ class Header extends Component {
         <p>Powererd by the <a>GitHub API</a></p>
         <div>
           <form onSubmit={this.handleSubmit}>
-            <input type='text' value={this.state.username} placeholder='enter a username' onChange={this.handleChange} />
-            <input type='submit' value='Submit' />
+            <input className='form-input' type='text' value={this.state.username} placeholder='enter a username' onChange={this.handleChange} />
+            <button className='form-submit' type='submit' value='Submit' >Submit </button>
           </form>
         </div>
       </div>
