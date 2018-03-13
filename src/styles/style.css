@@ -24,7 +24,8 @@ body {
 
 .form-input {
   width: 15%;
-  padding: 9px;
+  font-size: 12px;
+  padding: 7px;
   margin-right: 5px;
   border-radius: 3px;
   border: 1px solid black;
