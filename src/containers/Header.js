@@ -34,10 +34,10 @@ class Header extends Component {
     return (
       <div className="App-header">
         <h1 className="App-title">Github User Search</h1>
-        <p>Powererd by the <a>GitHub API</a></p>
+        <p>Using the <a>GitHub API</a></p>
         <div>
           <form onSubmit={this.handleSubmit}>
-            <input className='form-input' type='text' value={this.state.username} placeholder='enter a username' onChange={this.handleChange} />
+            <input className='form-input' type='text' value={this.state.username} placeholder='Enter a username' onChange={this.handleChange} />
             <button className='form-submit' type='submit' value='Submit' >Submit </button>
           </form>
         </div>
