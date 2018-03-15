@@ -76,6 +76,11 @@ body {
   width: 200px;
   height: 200px;
   margin: auto;
+  cursor: pointer;
+}
+
+.user-container:hover {
+  background-color: #aaa;
 }
 
 .user-page {
