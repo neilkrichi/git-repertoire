@@ -31,10 +31,14 @@ class Header extends Component {
     }
 
   render() {
+    const divStyle = {
+    fontSize: 14,
+    marginTop: 0,
+  };
     return (
       <div className="App-header">
         <h1 className="App-title">Github User Search</h1>
-        <p>Using the <a>GitHub API</a></p>
+        <p style={divStyle}>by Neil Krichi</p>
         <div>
           <form onSubmit={this.handleSubmit}>
             <input className='form-input' type='text' value={this.state.username} placeholder='Enter a username' onChange={this.handleChange} />

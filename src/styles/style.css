@@ -23,7 +23,7 @@ body {
 }
 
 .form-input {
-  width: 15%;
+  width: 20%;
   font-size: 12px;
   padding: 7px;
   margin-right: 5px;
@@ -39,6 +39,7 @@ body {
 
 .App-title {
   font-size: 1.5em;
+  margin-bottom: 5px;
 }
 
 .App-intro {
@@ -65,7 +66,7 @@ body {
 
 
 .user-list {
-  padding: 30px 50px;
+  padding: 20px 20px 70px 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -79,8 +80,13 @@ body {
   cursor: pointer;
 }
 
-.user-container:hover {
-  background-color: #aaa;
+.user-info {
+  padding-top: 10px;
+  border-radius: 4px;
+}
+
+.user-info:hover {
+  background-color: #e9e9e9;
 }
 
 .user-page {
@@ -124,7 +130,22 @@ body {
   text-align: center;
 }
 
-.user-details .username {
+.user-details .redirect {
   cursor: pointer;
+}
+
+.user-details .redirect:hover {
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 700px) {
+
+.App-header {
+  text-align: center;
+}
+
+.form-input {
+  width: 50%;
+}
+
 }
