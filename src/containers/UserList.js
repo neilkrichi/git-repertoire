@@ -31,10 +31,10 @@ renderCounter(){
     var count = this.props.users[0].total_count
     var counter = ''
     if (count <= 30) {
-    counter = `${count}/${count}`
+    counter = `${count} out of ${count}`
     }
     else {
-    counter = `30/${count}`
+    counter = `30 out of ${count}`
     }
     return (<h2 className='centered-text'>Displaying {counter} results</h2>)
   }

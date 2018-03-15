@@ -89,11 +89,14 @@ body {
 
 .user-info h2 {
   margin: 5px;
+  text-align: center;
 }
 
 .user-info .thumbnail {
+  display: block;
   width: 100px;
   height: auto;
+  margin: 0px auto;
 }
 
 .user-details {
