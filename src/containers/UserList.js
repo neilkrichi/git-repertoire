@@ -53,7 +53,6 @@ renderCounter(){
     }
 
     function mapStateToProps({ users }){
-      // Whatever is returned will show up as props inside of UserList
       return { users };
     }
 

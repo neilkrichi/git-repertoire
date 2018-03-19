@@ -42,7 +42,6 @@ class UserDetails extends Component {
 }
 
 function mapStateToProps({ userdetails }){
-  // Whatever is returned will show up as props inside of UserList
   return { userdetails };
 }
 

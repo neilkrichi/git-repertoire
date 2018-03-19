@@ -11,15 +11,7 @@ class User extends Component {
       selectedUser: 'neilkrichi',
       isOpen: false
     };
-
-//    this.togglePopup = this.togglePopup.bind(this)
   }
-
-//  togglePopup(){
-//    this.setState({isOpen: !this.state.isOpen})
-//    // this.setState({a : b}) > a = b
-//    // TOGGLE BETWEEN 2 STATES
-//  }
 
   render(){
     return(
