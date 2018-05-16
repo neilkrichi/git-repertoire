@@ -115,10 +115,10 @@ body {
   width: 40%;
   margin: 0px auto;
   padding-top: 30px;
-  background-color: #efefef;
-  -webkit-box-shadow: 4px 4px 2px 1px #ddd;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-  -moz-box-shadow:    4px 4px 2px 1px #ddd;  /* Firefox 3.5 - 3.6 */
-  box-shadow:         4px 4px 2px 1px #ddd;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  background-color: #fdfdfd;
+  -webkit-box-shadow: 3px 3px 4px 2px #dcdcdc;;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 4px 2px #dcdcdc;;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 4px 2px #dcdcdc;;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
 
 .user-profile .thumbnail {
@@ -132,6 +132,15 @@ body {
 
 .user-details .redirect {
   cursor: pointer;
+}
+
+.user-details button {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: white;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  outline: none;
 }
 
 .user-details .redirect:hover {
